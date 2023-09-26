@@ -34,7 +34,7 @@
                     <label>Fødselsnummer: <input class="input" type="number" id="fNr" onchange="validerTall(this)" placeholder="00000000000" required></label><span class="error" id="fNr_error"></span>
                     <label>Telefon nummer med landskode: +<input class="input" type="text" id="landskode" onchange="validerland(this)" placeholder="00" style="width: 24px;"><input class="input" type="number" id="tNr" onchange="validerTall(this)" placeholder="00000000" required></label><span class="error" id="landskode_error"></span><span id="tNr_error"></span>
                     <label>Addresse: <input class="input" type="text" id="addr" onchange="validerBlanding(this)" placeholder="Rocky Road 54" required></label><span class="error" id="addr_error"></span>
-                    <label>Postnummer: <input class="input" type="number" id="postNr" onchange="validerTall(this)" placeholder="0000" required></label><span class="error" id="number_error"></span>
+                    <label>Postnummer: <input class="input" type="number" id="postNr" onchange="validerTall(this)" placeholder="0000" required></label><span class="error" id="number_error"></span><span class="poststed" id="forPostNr"></span>
 
                     <div class="buttonCluster" style="padding-top:2%;">
                         <button class="fulfor" id="sendSelv" style="display: block;" onclick="submit('selv')">Send inn</button> <!--Kun synelig og relevant dersom bruker skal bestille for seg selv.-->
@@ -60,7 +60,7 @@
 
                     <div id="addresse" style="display: none;">
                         <label>Addresse: <input class="input" type="text" id="addrFor" onchange="validerBlanding(this)" placeholder="BakerStreet 221b"></label><span class="error" id="addrFor_error"></span>
-                        <label>Postnummer: <input class="input" type="number" id="postNrFor" onchange="validerTall(this)" placeholder="0000"></label><span class="error" id="postNrFor_error"></span>
+                        <label>Postnummer: <input class="input" type="number" id="postNrFor" onchange="validerTall(this)" placeholder="0000"></label><span class="error" id="postNrFor_error"></span><span class="poststed" id="forPostNr2"></span>
                     </div>
                 </div>
 
