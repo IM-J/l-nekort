@@ -37,8 +37,8 @@
                     <label>Postnummer: <input class="input" type="number" id="postNr" onchange="validerTall(this)" placeholder="0000" required></label><span class="error" id="number_error"></span>
 
                     <div class="buttonCluster" style="padding-top:2%;">
-                        <button id="sendSelv" style="display: block;" onclick="submit('selv')">Send inn</button> <!--Kun synelig og relevant dersom bruker skal bestille for seg selv.-->
-                        <button id="sendVidere" style="display: none;" onclick="neste('foresatt')">Neste</button>
+                        <button class="fulfor" id="sendSelv" style="display: block;" onclick="submit('selv')">Send inn</button> <!--Kun synelig og relevant dersom bruker skal bestille for seg selv.-->
+                        <button class="veier" id="sendVidere" style="display: none;" onclick="neste('foresatt')">Neste</button>
                     </div>
                 </div>
             </div>
@@ -65,8 +65,8 @@
                 </div>
 
                 <div class="buttonCluster" style="display: block;">
-                    <button id="sendbak" onclick="tilbake('selv')">Forrige</button>
-                    <button id="sendVidere" style="width: 80px" onclick="neste('barn')">Neste</button>
+                    <button class="veier" id="sendbak" onclick="tilbake('selv')">Forrige</button>
+                    <button class="veier" id="sendVidere" style="width: 80px" onclick="neste('barn')">Neste</button>
                 </div>
             </div>
                 <div id="barn" style="display:none;">
@@ -87,14 +87,18 @@
                             </div>
 
                             <div class="buttonCluster">
-                                <button id="sendbak" onclick="tilbake('foresatt')">Forrige</button>
-                                <button id="sendVidere" onclick="submit('barn')">Ferdig</button>
+                                <button class="veier" id="sendbak" onclick="tilbake('foresatt')">Forrige</button>
+                                <button class="fulfort" id="sendVidere" onclick="submit('barn')">Ferdig</button>
                             </div>
                         </div>
                     </div>
                 </div>
         </div>
     </form>
+    <div id="forAvbryt">
+        <a href="https://www.lillestrom.kommune.no/natur-kultur-og-fritid/bibliotek/">
+            <button id="avbryt" style="display:block;">Avbryt</button></a>
+    </div>
     <footer class="stil">
         <p><a href="https://www.lillestrom.kommune.no/">Lillestrøm kommune</a></p>
     </footer>

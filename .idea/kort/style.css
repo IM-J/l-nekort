@@ -4,12 +4,20 @@ a {
 }
 
 #avbryt{
-border-color:#c6393e;
-color: #
+border: 2px solid #e51a24;
+}
+
+#forAvbryt{
+    margin-top: 1%;
+}
+
+.fulfor{
+    border: 2px solid #34b75b;
 }
 
 .bilde{
     display:flex;
+    align-items: center;
     text-align: justify;
 }
 
@@ -31,9 +39,8 @@ button {
 }
 
 footer{
-
     bottom: 0;
-    align-items: center;
+   text-align: center;
 }
 
 header{
@@ -60,8 +67,9 @@ label{
 }
 
 #skjold{
+    display: inline-block;
     height: 3em;
-    justify-align: center;
+    margin: 0 auto;
 }
 
 #spraak {
@@ -70,4 +78,8 @@ label{
 
 #valg{
     display: inline-block;
+}
+
+.veier{
+    border: 2px solid  #1AE5DB;
 }

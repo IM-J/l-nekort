@@ -77,7 +77,7 @@ function visknp(){
     var sendVidere = document.getElementById('sendVidere');
     sendSelv.style.display='none';
     sendVidere.style.display='block';
-    console.log('knapp hentet fram.')
+    console.log('Lages for barn.')
 }
 
 function sjulknp(){
@@ -85,6 +85,7 @@ function sjulknp(){
     var sendVidere = document.getElementById('sendVidere');
     sendVidere.style.display='none';
     sendSelv.style.display='block';
+    console.log('Lages for seg selv.')
 }
 
 function ulikAddr(){
@@ -97,7 +98,7 @@ function ulikAddr(){
 
     addrBox.style.display='grid';
     barnAddr.style.display='block';
-
+    console.log('De har ulik addresse.')
 }
 
 function sammeAddr(){
@@ -105,6 +106,7 @@ function sammeAddr(){
     var barnAddr = document.getElementById('barnAddr');
     addrBox.style.display='none';
     barnAddr.style.display='none';
+    console.log('De bor på samme addresse.')
 }
 
 function barnAddresse(id){
@@ -115,9 +117,11 @@ function barnAddresse(id){
     switch(id){
         case('addr1'):
             barnAddr = addresse1;
+            console.log('Barnets primæraddresse er lik den første foresatte listet.')
             break;
         case('addr2'):
             barnAddr = addresse2;
+            console.log('Barnets primær addresse er lik den andre foresatte listet. ')
             break;
     }
     return barnAddr;
