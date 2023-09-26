@@ -77,6 +77,7 @@ function visknp(){
     var sendVidere = document.getElementById('sendVidere');
     sendSelv.style.display='none';
     sendVidere.style.display='block';
+    console.log('knapp hentet fram.')
 }
 
 function sjulknp(){
@@ -92,7 +93,7 @@ function ulikAddr(){
     var nyVerdi1 = document.getElementById('addr1');
     var nyVerdi2 = document.getElementById('addr2');
     document.getElementById('addr').value = nyVerdi1;
-    document.getElementById('addr').value nyVerdi2;
+    document.getElementById('addr').value = nyVerdi2;
 
     addrBox.style.display='grid';
     barnAddr.style.display='block';
