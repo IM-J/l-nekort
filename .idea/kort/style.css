@@ -1,0 +1,68 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.bilde{
+    display:flex;
+    align-items: flex-start;
+}
+
+body{
+    padding-left: 3%;
+}
+
+button {
+    height:20px;
+    width: 80px;
+}
+
+.buttonCluster{
+    padding-top:3%;
+}
+
+.error {
+    color: red;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    margin-left: 25%;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+#hvem {
+display:grid;
+}
+
+label{
+    padding-top:1%;
+    margin-bottom:1%;
+    }
+
+#overskrift{
+    padding: 0;
+    width: 100%;
+}
+
+.skjema{
+    display:grid;
+}
+
+#skjold{
+    height: 3em;
+    padding-top:16%;
+}
+
+#spraak {
+    font-size:2em;
+}
+
+#valg{
+    display: inline-block;
+}

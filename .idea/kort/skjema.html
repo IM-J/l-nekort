@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <script src="script.js"></script>
+    <header class="stil">
+        <a href="https://www.lillestrom.kommune.no/">
+            <div class="bilde">
+            <img src="bilder/lillestromBilde.png" alt="Lillestrøm kommunevåpen." id="skjold">
+            <h2>Lillestrøm </br> kommune</h2>
+            </div>
+        </a>
+    </header>
+
+    <div id="overskrift">
+        <h1>Bestillings skjema for biblioteks-lånekort</h1>
+    </div>
+
+    <div class="stil" id="hvem" style="display:grid;">
+        <label><input type="radio" name="ln" value="deg" class="radioknp" id="selvknp" onclick="sjulknp()">Bestill for deg selv</label>
+        <label><input type="radio" name="ln" value="barn" class="radioknp" id="barnknp" onclick="visknp()">Bestill for barn under 15</label>
+    </div>
+
+    <form class="stil" id="skjemaInn">
+        <div id="alt"> <!--For å kunne sende inn alt, kun relevant om knappen for barn er trykket.-->
+        <div id="selv" style="display:block;"> <!--brukes både for å hente ut informasjon dersom radio knappen for seg selv er trykket, og for å kunne vise og sjule deler av skjemaet.-->
+            <div class="skjema">
+                <label>Fornavn: <input class="input" type="text" id="fNavn" onchange="validerTekst(this)" placeholder="Ola" required></label> <span class="error" id="fNavn_error"></span>
+                <label>Etternavn: <input class="input" type="text" id="eNavn" onchange="validerTekst(this)" placeholder="Nordman" required></label><span class="error" id="eNavn_error"></span>
+                <label>Alder: <input class="input" type="number" id="alder" onchange="validerTall(this)" placeholder="23" required></label><span class="error" id="alder_error"></span>
+                <label>Epost: <input class="input" type="email" id="epost" onchange="validerEmail(this)" placeholder="enMail@mail.com" required></label><span class="error" id="email_error"></span>
+                <label>Fødselsnummer: <input class="input" type="number" id="fNr" onchange="validerTall(this)" placeholder="00000000000" required></label><span class="error" id="fNr_error"></span>
+                <label>Telefon nummer med landskode: +<input class="input" type="text" id="landskode" onchange="validerland(this)" placeholder="00" style="width: 24px;"><input class="input" type="number" id="tNr" onchange="validerTall(this)" placeholder="00000000" required></label><span class="error" id="landskode_error"></span><span id="tNr_error"></span>
+                <label>Addresse: <input class="input" type="text" id="addr" onchange="validerBlanding(this)" placeholder="Rocky Road 54" required></label><span class="error" id="addr_error"></span>
+                <label>Postnummer: <input class="input" type="number" id="postNr" onchange="validerTall(this)" placeholder="0000" required></label><span class="error" id="number_error"></span>
+
+                <div class="buttonCluster" style="padding-top:2%;">
+                    <button id="sendSelv" style="display: block;" onclick="submit('selv')">Send inn</button> <!--Kun synelig og relevant dersom bruker skal bestille for seg selv.-->
+                    <button id="sendVidere" style="display: none;" onclick="neste('foresatt')">Neste</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="foresatt" style="display:none;">
+            <div  class="skjema">
+                <h3>Foresatt 2</h3>
+                <label>Fornavn: <input class="input" type="text" id="fNavnFor" onchange="validerTekst(this)" placeholder="Jane"></label><span class="error" id="fNavnFor_error"></span>
+                <label>Etternavn: <input class="input" type="text" id="eNavnFor" onchange="validerTekst(this)" placeholder="Doe"></label><span class="error" id="eNavnFor_error"></span>
+                <label>Alder: <input class="input" type="number" id="alderFor" onchange="validerTall(this)" placeholder="53"></label><span class="error" id="alderFor_error"></span>
+                <label>Epost: <input class="input" type="email" id="epostFor" onchange="validerEmail(this)" placeholder="nyMail@mail.no"></label><span class="error" id="epostFor_error"></span>
+                <label>Fødselsnummer: <input class="input" type="number" id="fNrFor" onchange="validerTall(this)" placeholder="00000000000"></label><span class="error" id="fNrFor_error"></span>
+                <label>Telefon nummer med landskode: +<input class="input" type="text" id="landskode" onchange="validerland(this)" style="width: 24px;" placeholder="00"><input class="input" type="number" id="tNr" onchange="validerTall(this)" placeholder="00000000"></label><span class="error" id="landskode_error"></span><span id="tNr_error"></span>
+
+                <div id="valg">
+                    <label><input type="radio" name="samboer" value="lik" class="radioknp" id="sammeAd" onclick="sammeAddr()">Har samme addresse</label>
+                    <label><input type="radio" name="samboer" value="ulik" class="radioknp" id="ulikAd" onclick="ulikAddr()">Har ulik Addresse</label>
+                </div>
+
+                <div id="addresse" style="display: none;">
+                    <label>Addresse: <input class="input" type="text" id="addrFor" onchange="validerBlanding(this)" placeholder="BakerStreet 221b"></label><span class="error" id="addrFor_error"></span>
+                    <label>Postnummer: <input class="input" type="number" id="postNrFor" onchange="validerTall(this)" placeholder="0000"></label><span class="error" id="postNrFor_error"></span>
+                </div>
+            </div>
+
+            <div class="buttonCluster" style="display: block;">
+                <button id="sendbak" onclick="tilbake('selv')">Forrige</button>
+                <button id="sendVidere" style="width: 80px" onclick="neste('barn')">Neste</button>
+            </div>
+        </div>
+            <div id="barn" style="display:none;">
+                <div style="display: block; padding-top:8px;">
+                    <div class="skjema" id="barnForm">
+                        <h3>Barn</h3>
+                        <label>Fornavn: <input class="input" type="text" id="fNavnBarn" onchange="validerTekst(this)" placeholder="Ash"></label><span id="fNavnBarn_error"></span>
+                        <label>Etternavn: <input class="input" type="text" id="eNavnBarn" onchange="validerTekst(this)" placeholder="Ketchum"></label><span id="eNavnBarn_error"></span>
+                        <label>Alder: <input class="input" type="number" id="alderBarn" onchange="validerTall(this)" placeholder="11"></label><span class="error" id="alderFor_error"></span>
+                        <label>Epost: <input class="input" type="email" id="epost" onchange="validerEmail(this)" placeholder="Catch@mail.co"></label><span id="epost_error"></span>
+                        <label>Fødselsnummer: <input class="input" type="number" id="fNrBarn" onchange="validerTall(this)" placeholder="00000000000"></label><span id="fNrBarn_error"></span>
+                        <label>Telefon nummer: <input class="input" type="number" id="tNrBarn" onchange="validerTall(this)" placeholder="00000000"></label><span id="tNrBarn_error"></span>
+
+                        <div id="barnAddr" style="display: none;">
+                            <p>Hva er primæraddressen til barnet?</p>
+                            <label><input name="ln" value="" class="radioknp" type="radio" id="addrF1">Samme addresse som foresatt 1</label>
+                            <label><input name="ln" value="" class="radioknp" type="radio" id="addrF2">Samme som foresatt 2</label>
+                        </div>
+
+                        <div class="buttonCluster">
+                            <button id="sendbak" onclick="tilbake('foresatt')">Forrige</button>
+                            <button id="sendVidere" onclick="submit('barn')">Ferdig</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <footer class="stil">
+        <p><a href="https://www.lillestrom.kommune.no/">Lillestrøm kommune</a></p>
+    </footer>
+</body>
