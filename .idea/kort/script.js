@@ -144,8 +144,8 @@ function validerTekst(element){
 
 function validerBlanding(element){
     var id = element.id;
-    var pattern = /^[A-Z a-z ÆØÅæøå 0-9]+$/
-    var errorMelding = document.getElementById(id + '_error')
+    var pattern = /^[A-Z a-z ÆØÅæøå 0-9]+$/;
+    var errorMelding = document.getElementById(id + '_error');
     if (pattern.test(element.value)){
         element.style.borderColor = 'green';
         errorMelding.textContent = '';
@@ -158,10 +158,14 @@ function validerBlanding(element){
 
 function validerTall(element){
     var id = element.id;
-    var pattern = /^[0-9]+$/
-    var errorMelding = document.getElementById(id + '_error')
-
-    if (pattern.test(element.value)){
+    var pattern = /^[0-9]+$/;
+    var errorMelding = document.getElementById(id + '_error');
+    var alder = document.getElementById('alderBarn').value;
+    if (alder > 15){
+            element.style.borderColor = 'red';
+            errorMelding.textContent = 'Barnet ditt er gammel nok til å bestille kort selv. Send linken til dem og la dem gjøre det.'
+        }
+    else if (pattern.test(element.value)){
         element.style.borderColor = 'green';
     }
     else {
@@ -173,7 +177,7 @@ function validerTall(element){
 }
 function validerland(element){
     var id = element.id;
-    var pattern = /^[0-9]{1,3}$/
+    var pattern = /^[0-9]{1,3}$/;
 
     if (pattern.test(element.value)){
         element.style.borderColor = 'green';
@@ -186,7 +190,7 @@ function validerland(element){
 
 function validerEmail(element){
     var id = element.id;
-    var pattern = /^[A-Za-zÆØÅæøå0-9._%+-,]+@[A-Za-zÆØÅæøå0-9,.-_]+\.[A-Za-z]{2,}$/
+    var pattern = /^[A-Za-zÆØÅæøå0-9._%+-,]+@[A-Za-zÆØÅæøå0-9,.-_]+\.[A-Za-z]{2,}$/;
 
    if (pattern.test(element.value)){
        element.style.borderColor = 'green';

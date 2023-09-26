@@ -51,7 +51,7 @@
                     <label>Alder: <input class="input" type="number" id="alderFor" onchange="validerTall(this)" placeholder="53"></label><span class="error" id="alderFor_error"></span>
                     <label>Epost: <input class="input" type="email" id="epostFor" onchange="validerEmail(this)" placeholder="nyMail@mail.no"></label><span class="error" id="epostFor_error"></span>
                     <label>Fødselsnummer: <input class="input" type="number" id="fNrFor" onchange="validerTall(this)" placeholder="00000000000"></label><span class="error" id="fNrFor_error"></span>
-                    <label>Telefon nummer med landskode: +<input class="input" type="text" id="landskode" onchange="validerland(this)" style="width: 24px;" placeholder="00"><input class="input" type="number" id="tNr" onchange="validerTall(this)" placeholder="00000000"></label><span class="error" id="landskode_error"></span><span id="tNr_error"></span>
+                    <label>Telefon nummer med landskode: +<input class="input" type="text" id="landskodeFor" onchange="validerland(this)" style="width: 24px;" placeholder="00"><input class="input" type="number" id="tNrFor" onchange="validerTall(this)" placeholder="00000000"></label><span class="error" id="landskode_error"></span><span id="tNr_error"></span>
 
                     <div id="valg">
                         <label><input type="radio" name="samboer" value="lik" class="radioknp" id="sammeAd" onclick="sammeAddr()">Har samme addresse</label>
@@ -76,7 +76,7 @@
                             <label>Fornavn: <input class="input" type="text" id="fNavnBarn" onchange="validerTekst(this)" placeholder="Ash"></label><span id="fNavnBarn_error"></span>
                             <label>Etternavn: <input class="input" type="text" id="eNavnBarn" onchange="validerTekst(this)" placeholder="Ketchum"></label><span id="eNavnBarn_error"></span>
                             <label>Alder: <input class="input" type="number" id="alderBarn" onchange="validerTall(this)" placeholder="11"></label><span class="error" id="alderBarn_error"></span>
-                            <label>Epost: <input class="input" type="email" id="epost" onchange="validerEmail(this)" placeholder="Catch@mail.co"></label><span id="epostBarn_error"></span>
+                            <label>Epost: <input class="input" type="email" id="epostBarn" onchange="validerEmail(this)" placeholder="Catch@mail.co"></label><span id="epostBarn_error"></span>
                             <label>Fødselsnummer: <input class="input" type="number" id="fNrBarn" onchange="validerTall(this)" placeholder="00000000000"></label><span id="fNrBarn_error"></span>
                             <label>Telefon nummer: <input class="input" type="number" id="tNrBarn" onchange="validerTall(this)" placeholder="00000000"></label><span id="tNrBarn_error"></span>
 
